@@ -1,6 +1,7 @@
 import discord
 import random
 from discord.ext import tasks
+import os
 
 client = discord.Client()
 
@@ -121,6 +122,12 @@ async def on_message(message):
 		noun = f.read().split("\n")
 		f.close()
 
+	if message.content == "~U":
+		await message.channel.send("**[SB]:** Updating")
+		os.system("chmod +x update.sh;./update.sh")
+		await client.logout()
+		exit()
+		
 	if message.content == "~X":
 		print("Shutdown in app")
 		await message.channel.send("**[SB]:** Shut down status bot")
