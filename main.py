@@ -44,7 +44,7 @@ def get_random_stat(type) :
 		if(random.randrange(0,2)==0):
 			return "a " + get_noun() + "competition"
 		else:
-			return "a " + get_verb().split(" ")[0] + "tournament"
+			return "a " + get_verb().split(" ")[0] + " tournament"
 	if(random.randrange(0,2)==0):
 		nouna = get_noun()
 		nounb = get_noun()
