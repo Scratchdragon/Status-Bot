@@ -33,9 +33,9 @@ def get_noun() :
 		ret = random.choice(tuple(adjective)) + " " + ret
 	return ret
 
-def get_verb() :
+def get_verb(adv = True) :
 	ret = random.choice(tuple(verb)) + " "
-	if(random.randrange(0,2)==0):
+	if(random.randrange(0,2)==0 and adv):
 		ret = random.choice(tuple(adverb)) + " " + ret
 	return ret
 
@@ -44,7 +44,7 @@ def get_random_stat(type) :
 		if(random.randrange(0,2)==0):
 			return "a " + get_noun() + "competition"
 		else:
-			return "a " + get_verb().split(" ")[0] + " tournament"
+			return "a " + get_verb(False).split(" ")[0] + " tournament"
 	if(random.randrange(0,2)==0):
 		nouna = get_noun()
 		nounb = get_noun()
