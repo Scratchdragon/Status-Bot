@@ -1,0 +1,14 @@
+books
+people
+toothbrushes
+men
+not-men
+bots
+cows
+femoids
+androids
+murderers
+wizards
+aliens
+girlfriends
+boyfriends
