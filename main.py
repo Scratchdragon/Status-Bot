@@ -42,9 +42,17 @@ def get_verb(adv = True) :
 def get_random_stat(type) :
 	if(type==5):
 		if(random.randrange(0,2)==0):
-			return "a " + get_noun() + "competition"
+			joinword = "a "
+			n = get_noun()
+			if(n[0]=="a"):
+				joinword = "an "
+			return joinword +n + "competition"
 		else:
-			return "a " + get_verb(False).split(" ")[0] + " tournament"
+			joinword = "a "
+			n = get_verb(False).split(" ")[0]
+			if(n[0]=="a"):
+				joinword = "an "
+			return joinword + n + " tournament"
 	if(random.randrange(0,2)==0):
 		nouna = get_noun()
 		nounb = get_noun()
