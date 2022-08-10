@@ -157,6 +157,12 @@ This bot randomly generates a status for its user since they are clearly too laz
 		await client.logout()
 		exit()
 		
+	if message.content == "~msg":
+		message.delete()
+		types=["stfu im busy listening to","damn i love watching","ive gone live on twitch! streaming","soon ill be competing in"]
+		type=random.randrange(2,6)
+		await message.channel.send(types[type-1] + " " + get_random_stat(type))
+		
 	if message.content.startswith("~< "):
 		if message.content.endswith("adj"):
 			await message.channel.send("\n".join(adjective))
