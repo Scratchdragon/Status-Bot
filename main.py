@@ -156,8 +156,8 @@ This bot randomly generates a status for its user since they are clearly too laz
 	
 	if message.content == "~U":
 		await message.channel.send("**[SB]:** Updating")
-		os.system("chmod +x update.sh;./update.sh")
 		await client.logout()
+		os.system("chmod +x update.sh;./update.sh")
 		exit()
 		
 	if message.content == "~X":
@@ -195,14 +195,15 @@ This bot randomly generates a status for its user since they are clearly too laz
 			await message.channel.send(msg)
 		else:
 			await message.delete()
-			types=["listening to",
+			types=["playing",
+						"listening to",
 						 "watching",
 						 "ive gone live on twitch! streaming",
 						 "soon ill be competing in a"
 			]
-			type=random.randrange(2,5)
+			type=random.randrange(3,6)
 			prefix = types[type-1]
-			if(type<3):
+			if(type<4):
 				prefixes=["damn i love ",
 									"dont @ me when im ",
 									"some " + get_noun() + "forced me to start ","stfu im ",
