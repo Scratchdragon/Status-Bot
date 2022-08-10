@@ -172,7 +172,12 @@ This bot randomly generates a status for its user since they are clearly too laz
 			starters = [
 				"yesterday i was ",
 				"last " + random.choice(tuple(day)) + " i was ",
-				"next " + random.choice(tuple(day)) + " im gonna be "
+				"next " + random.choice(tuple(day)) + " im gonna be ",
+				"i started ",
+				"im addicted to ",
+				"i got arrested in the year " + str(1800 + random.randrange(0,230)) + " for ",
+				"today marks " + str(random.randrange(0,30)) + " years of ",
+				"this is a cry for help, i desperately need to stop "
 			]
 			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
 			await message.channel.send(msg)
