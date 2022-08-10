@@ -159,9 +159,14 @@ This bot randomly generates a status for its user since they are clearly too laz
 		
 	if message.content == "~msg":
 		message.delete()
-		types=["stfu im busy listening to","damn i love watching","ive gone live on twitch! streaming","soon ill be competing in"]
+		types=["listening to","watching","ive gone live on twitch! streaming","soon ill be competing in a"]
 		type=random.randrange(2,6)
-		await message.channel.send(types[type-1] + " " + get_random_stat(type))
+		prefix = types[type-1]
+		if(type<4):
+			day=["monday","tuesday","wednesday","thursday","friday","saterday"]
+			prefixes=["damn i love ","dont @ me when im ","some " + get_noun() + "forced me to start ","stfu im ","ayo you wanna try ","every " + random.choice(tuple(day)) + " im probably "]
+			prefix = random.choice(tuple(prefixes)) + prefix
+		await message.channel.send(prefix + " " + get_random_stat(type))
 		
 	if message.content.startswith("~< "):
 		if message.content.endswith("adj"):
