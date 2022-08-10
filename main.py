@@ -184,7 +184,13 @@ This bot randomly generates a status for its user since they are clearly too laz
 				"not even death can stop me from ",
 				"damn, i am no longer ",
 				get_noun() + "stole my " + get_noun() + "so i cannot continue ",
-				get_noun() + "hate it when im "
+				get_noun() + "hate it when im ",
+				"could someone remind me on " + random.choice(tuple(day)) + " to start ",
+				"it took " + str(random.randrange(2,40)) + " murders for me to stop ",
+				"at the age of " + str(random.randrange(2,60)) + " id suffered " + str(random.randrange(2,420420)) + " heart attacks and still never stopped ",
+				"i really need to tell you about ",
+				"i would kill you but youve been ",
+				"i could never love a person who is always "
 			]
 			try:
 				starters.append(random.choice(tuple(message.channel.guild.members)).name + " loves ")
