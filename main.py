@@ -167,8 +167,8 @@ This bot randomly generates a status for its user since they are clearly too laz
 		exit()
 		
 	if message.content == "~msg":
-		msgtype=random.randrange(1,3)
-		if(msgtype==1):
+		msgtype=random.randrange(1,5)
+		if(msgtype!=1):
 			starters = [
 				"yesterday i was ",
 				"last " + random.choice(tuple(day)) + " i was ",
