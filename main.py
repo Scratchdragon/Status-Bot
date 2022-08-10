@@ -142,6 +142,12 @@ async def on_message(message):
 		await client.logout()
 		exit()
 
+	if message.content == "~T":
+		embedVar = discord.Embed(title="Title", description="Desc", color=0x00ff00)
+		embedVar.add_field(name="Field1", value="hi", inline=False)
+		embedVar.add_field(name="Field2", value="hi2", inline=False)
+		await message.channel.send(embed=embedVar)
+		
 	if message.content.startswith("~< "):
 		if message.content.endswith("adj"):
 			await message.channel.send("\n".join(adjective))
