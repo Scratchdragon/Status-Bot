@@ -5,6 +5,14 @@ import os
 
 client = discord.Client()
 
+day=["monday",
+						 "tuesday",
+						 "wednesday",
+						 "thursday",
+						 "friday",
+						 "saterday"
+]
+
 adverb = []
 f = open("words/adverb.txt", "r")
 adverb = f.read().split("\n")
@@ -159,15 +167,33 @@ This bot randomly generates a status for its user since they are clearly too laz
 		exit()
 		
 	if message.content == "~msg":
-		message.delete()
-		types=["listening to","watching","ive gone live on twitch! streaming","soon ill be competing in a"]
-		type=random.randrange(2,6)
-		prefix = types[type-1]
-		if(type<4):
-			day=["monday","tuesday","wednesday","thursday","friday","saterday"]
-			prefixes=["damn i love ","dont @ me when im ","some " + get_noun() + "forced me to start ","stfu im ","ayo you wanna try ","every " + random.choice(tuple(day)) + " im probably "]
-			prefix = random.choice(tuple(prefixes)) + prefix
-		await message.channel.send(prefix + " " + get_random_stat(type))
+		msgtype=random.randrange(1,3)
+		if(msgtype==1):
+			starters = [
+				"yesterday i was ",
+				"last " + random.choice(tuple(day)) + " i was ",
+				"next " + random.choice(tuple(day)) + " im gonna be "
+			]
+			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
+			await message.channel.send(msg)
+		else:
+			message.delete()
+			types=["listening to",
+						 "watching",
+						 "ive gone live on twitch! streaming",
+						 "soon ill be competing in a"
+			]
+			type=random.randrange(2,6)
+			prefix = types[type-1]
+			if(type<4):
+				prefixes=["damn i love ",
+									"dont @ me when im ",
+									"some " + get_noun() + "forced me to start ","stfu im ",
+									"ayo you wanna try ",
+									"every " + random.choice(tuple(day)) + " im probably "
+				]
+				prefix = random.choice(tuple(prefixes)) + prefix
+			await message.channel.send(prefix + " " + get_random_stat(type))
 		
 	if message.content.startswith("~< "):
 		if message.content.endswith("adj"):
