@@ -185,7 +185,7 @@ This bot randomly generates a status for its user since they are clearly too laz
 			]
 			type=random.randrange(2,6)
 			prefix = types[type-1]
-			if(type<4):
+			if(type<3):
 				prefixes=["damn i love ",
 									"dont @ me when im ",
 									"some " + get_noun() + "forced me to start ","stfu im ",
