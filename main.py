@@ -167,6 +167,10 @@ This bot randomly generates a status for its user since they are clearly too laz
 		exit()
 		
 	if message.content == "~msg":
+		try:
+			await message.delete()
+		except:
+			print("couldnt delete")
 		msgtype=random.randrange(1,5)
 		if(msgtype!=1):
 			starters = [
@@ -187,7 +191,7 @@ This bot randomly generates a status for its user since they are clearly too laz
 				get_noun() + "hate it when im ",
 				"could someone remind me on " + random.choice(tuple(day)) + " to start ",
 				"it took " + str(random.randrange(2,40)) + " murders for me to stop ",
-				"at the age of " + str(random.randrange(2,60)) + " id suffered " + str(random.randrange(2,420420)) + " heart attacks and still never stopped ",
+				"at the age of " + str(random.randrange(2,60)) + " id suffered " + str(random.randrange(2,200)) + " heart attacks and still never stopped ",
 				"i really need to tell you about ",
 				"i would kill you but youve been ",
 				"i could never love a person who is always "
@@ -200,7 +204,6 @@ This bot randomly generates a status for its user since they are clearly too laz
 			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
 			await message.channel.send(msg)
 		else:
-			await message.delete()
 			types=["playing",
 						"listening to",
 						 "watching",
