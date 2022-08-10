@@ -143,6 +143,7 @@ This bot randomly generates a status for its user since they are clearly too laz
 ~> adv - Add an adverb
 ~> noun - Add a noun
 ~> verb - Add a verb
+~msg - Spit out a random message
 ~SB - take a guess dumbass""")
 	
 	if message.content == "~U":
