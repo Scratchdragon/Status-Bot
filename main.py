@@ -130,6 +130,21 @@ async def on_message(message):
 		noun = f.read().split("\n")
 		f.close()
 
+	if message.content == "~SB":
+		await message.channel.send("""- Status bot -
+by muckrat
+
+This bot randomly generates a status for its user since they are clearly too lazy to get off their ass and do it themself
+
+~U - Updates bot
+~R - Reloads words
+~X - Stop the bot
+~> adj - Add an adjective
+~> adv - Add an adverb
+~> noun - Add a noun
+~> verb - Add a verb
+~SB - take a guess dumbass""")
+	
 	if message.content == "~U":
 		await message.channel.send("**[SB]:** Updating")
 		os.system("chmod +x update.sh;./update.sh")
