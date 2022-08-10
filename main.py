@@ -177,7 +177,15 @@ This bot randomly generates a status for its user since they are clearly too laz
 				"im addicted to ",
 				"i got arrested in the year " + str(1800 + random.randrange(0,230)) + " for ",
 				"today marks " + str(random.randrange(0,30)) + " years of ",
-				"this is a cry for help, i desperately need to stop "
+				"this is a cry for help, i desperately need to stop ",
+				"this is kinda out of the blue, but have you tried ",
+				"i would give you " + str(random.randrange(2,420420)) + " dollars but you havent been ",
+				"immortality can be gained through ",
+				"not even death can stop me from ",
+				"damn, i am no longer ",
+				get_noun() + "stole my " + get_noun() + "so i cannot continue ",
+				get_noun() + "hate it when im ",
+				random.choice(tuple(message.channel.guild.members)).name + " loves "
 			]
 			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
 			await message.channel.send(msg)
