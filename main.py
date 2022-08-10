@@ -153,8 +153,16 @@ async def on_message(message):
 			await message.channel.send("\n".join(noun))
 
 try:
-	f = open("token.txt","r")
-	client.run(f.read(),bot=False)
+	token = ""
+	try:
+		f = open("token.txt","r")
+		token = f.read()
+	except:
+		f = open("token.txt","w")
+		token = input("Token: ")
+		f.write(token)
+
+	client.run(token,bot=False)
 	f.close()
 except discord.HTTPException as e:
 	if e.status == 429:
