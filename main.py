@@ -184,9 +184,13 @@ This bot randomly generates a status for its user since they are clearly too laz
 				"not even death can stop me from ",
 				"damn, i am no longer ",
 				get_noun() + "stole my " + get_noun() + "so i cannot continue ",
-				get_noun() + "hate it when im ",
-				random.choice(tuple(message.channel.guild.members)).name + " loves "
+				get_noun() + "hate it when im "
 			]
+			try:
+				starters.append(random.choice(tuple(message.channel.guild.members)).name + " loves ")
+			except:
+				starters.append("someone loves ")
+				
 			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
 			await message.channel.send(msg)
 		else:
