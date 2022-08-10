@@ -183,7 +183,7 @@ This bot randomly generates a status for its user since they are clearly too laz
 						 "ive gone live on twitch! streaming",
 						 "soon ill be competing in a"
 			]
-			type=random.randrange(2,6)
+			type=random.randrange(2,5)
 			prefix = types[type-1]
 			if(type<3):
 				prefixes=["damn i love ",
