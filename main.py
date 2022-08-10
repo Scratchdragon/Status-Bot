@@ -194,7 +194,7 @@ This bot randomly generates a status for its user since they are clearly too laz
 			msg = random.choice(tuple(starters)) + get_verb() + get_noun()
 			await message.channel.send(msg)
 		else:
-			message.delete()
+			await message.delete()
 			types=["listening to",
 						 "watching",
 						 "ive gone live on twitch! streaming",
